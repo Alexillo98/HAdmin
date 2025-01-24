@@ -1,0 +1,23 @@
+.myModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* semi-transparente para dar efecto overlay */
+    z-index: 9999; /* asegúrate de que quede arriba del resto */
+}
+
+.myModal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 300px;
+    position: relative;
+}
+
+.closeModal {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}

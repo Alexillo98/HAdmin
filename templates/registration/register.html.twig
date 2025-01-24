@@ -1,17 +1,34 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Register{% endblock %}
+<!DOCTYPE html>
+{% block head %}
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/animaciones.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/register.css') }}">
+{% endblock %}
+<title>Register</title>
 
 {% block body %}
-    <h1>Register</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    <div id="register_form">
+        <h1>Register</h1>
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.nombre) }}
+            {{ form_row(registrationForm.apellido) }}
+            {{ form_row(registrationForm.edad) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }}
+            {{ form_row(registrationForm.user_type) }}
+            <div id="especialidad">
+                <select id="select-especialidad">
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                </select>
+                {{ form_row(registrationForm.especialidad) }}
+            </div>
+            <div id="historia-c">
+                {{ form_row(registrationForm.historiaC) }}
+            </div>
+            {{ form_row(registrationForm.register) }}
+        {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}
