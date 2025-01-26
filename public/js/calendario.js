@@ -39,20 +39,6 @@ $(document).ready(function (){
     }
 
     $(document).on("click", ".day", function() {
-        // El plugin reaccionará y mostrará la ventana emergente.
-        // Esperamos un poco a que se renderice.
-        setTimeout(function(){
-            // Seleccionamos la ventana/panel que se ha abierto
-            let $popup = $(".aec-popup");
-            // Revisa si existe y si no hemos insertado el botón antes
-            if ($popup.find(".btnAddEvent").length === 0) {
-                // Insertamos un botón "Añadir Cita" justo debajo de la lista de eventos
-                $popup.find(".aec-event-list").after(`
-                    <div style="margin-top:10px;">
-                        <button class="btnAddEvent">Añadir Cita</button>
-                    </div>`);
-            }
-        }, 200);
         let selectedDate = $(this).data("date");
         let formattedDate = dayjs(selectedDate).format('YYYY-MM-DD');
         let nuevaFecha = new Date(formattedDate);

@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.schedule-container {
+    margin: 20px auto;
+    max-width: 80%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.appointment-form {
+    margin: 20px auto;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.menu {
+    grid-row: 1 / 3;
+    grid-column: 1;
+    background-color: white;
+    border: 1px solid #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: visible; /* Permitir que los submenús se muestren fuera del contenedor */
+    position: relative; /* Establece el contexto de posicionamiento para los submenús */
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+    grid-column: 2;
+}
+
+.box {
+    background-color: white;
+    border: 1px solid #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.menu-vertical ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.menu-vertical li {
+    position: relative;
+    margin: 10px 0;
+}
+
+.menu-vertical a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-vertical a:hover {
+    background-color: rgb(0, 119, 255);
+    color: white;
+}
+
+.dropdown-menu {
+    display: none; /* Ocultar inicialmente */
+    list-style: none;
+    position: absolute; /* Posicionarlo fuera del flujo normal */
+    left: 100%; /* Alinearlo a la derecha del elemento padre */
+    top: 0; /* Alinear con el borde superior */
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegurar que el menú esté en la capa superior */
+}
+
+.dropdown-menu li a {
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: orange;
+    color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}

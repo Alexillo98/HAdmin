@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Hospitalaria</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/js/animaciones.js"></script>
+    <script src="/js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="menu-vertical">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#usuarios" class="dropdown-toggle">Usuarios</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#crear-usuario">Crear Usuario</a></li>
+                            <li><a href="#editar-usuario">Editar Usuario</a></li>
+                            <li><a href="#eliminar-usuario">Eliminar Usuario</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#reportes" class="dropdown-toggle">Reportes</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#generar-reporte">Generar Reporte</a></li>
+                            <li><a href="#ver-reporte">Ver Reportes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#configuracion">Configuración</a></li>
+                    <li><a href="#salir">Salir</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="info-container">
+            <div class="photo box">
+                <img src="/img/medico1.jpeg" alt="foto_usuario">
+            </div>
+            <div class="id box">
+                <p>ID: </p>
+                <p>ROL: </p>
+            </div>
+            <div class="personal-info box">
+                <p>EMAIL:</p>
+                <p>NOMBRE:</p>
+                <p>APELLIDO:</p>
+                <p>EDAD:</p>
+            </div>
+        </div>
+        <div class="additional-info box">
+            <div class="schedule-container">
+                <table id="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Horario</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>Sábado</th>
+                            <th>Domingo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-body">
+                        <!-- Generar dinámicamente las filas de las horas -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="appointment-form">
+                <h2>Agregar Nueva Cita</h2>
+                <form id="add-appointment">
+                    <label for="day">Día:</label>
+                    <select id="day" name="day">
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miércoles">Miércoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                        <option value="Sábado">Sábado</option>
+                        <option value="Domingo">Domingo</option>
+                    </select>
+                    <label for="time">Hora:</label>
+                    <select id="time" name="time">
+                        <!-- Opciones de horas generadas dinámicamente -->
+                    </select>
+                    <label for="patient">Paciente:</label>
+                    <input type="text" id="patient" name="patient" required>
+                    <button type="submit">Guardar Cita</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

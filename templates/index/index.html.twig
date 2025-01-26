@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Hospitalaria</title>
+    <link rel="stylesheet" href="{{ asset("/css/styles.css") }}">
+    <link rel="stylesheet" href="{{ asset("/css/simple-calendar.css") }}">
+    <link rel="stylesheet" href="{{ asset("/css/calendario.css") }}">
+    <script src="{{ asset("https://code.jquery.com/jquery-3.6.4.min.js") }}"></script>
+    <script src="{{ asset("https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js") }}"></script>
+    <script src="{{ asset("/js/animaciones.js") }}"></script>
+    <script src="{{ asset("/js/calendario.js") }}"></script>
+    <script src="{{ asset("/js/jquery.simple-calendar.js") }}"></script>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="menu">
+        <div class="menu-vertical">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#usuarios" class="dropdown-toggle">Usuarios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#crear-usuario">Crear Usuario</a></li>
+                        <li><a href="#editar-usuario">Editar Usuario</a></li>
+                        <li><a href="#eliminar-usuario">Eliminar Usuario</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#reportes" class="dropdown-toggle">Reportes</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#generar-reporte">Generar Reporte</a></li>
+                        <li><a href="#ver-reporte">Ver Reportes</a></li>
+                    </ul>
+                </li>
+                <li><a href="#configuracion">Configuración</a></li>
+                <li><a href="#salir">Salir</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="info-container">
+        <div class="photo box">
+            <img src="/img/medico1.jpeg" alt="foto_usuario">
+        </div>
+        <div class="id box">
+            <p>EMAIL:</p>
+            <p>NOMBRE:</p>
+            <p>APELLIDO:</p>
+            <p>EDAD:</p>
+        </div>
+        <div class="personal-info box">
+            <p>ID: </p>
+            <p>ROL: </p>
+        </div>
+    </div>
+    <div class="additional-info box">
+        <div id="calendar">
+        </div>
+        <!-- Modal oculto inicialmente -->
+        <div id="modalAddEvent" class="myModal" style="display: none">
+            <div class="myModal-content">
+                <span class="closeModal" id="btnCloseModal">&times;</span>
+                <h3>Añadir nueva cita</h3>
+                <form id="formAddEvent">
+                    <label for="inputFecha">Fecha:</label>
+                    <input type="text" id="inputFecha" name="fecha" readonly><br><br>
+
+                    <label for="inputNombre">Nombre:</label>
+                    <input type="text" id="inputNombre" name="nombre" required><br><br>
+
+                    <label for="inputDescripcion">Descripción:</label>
+                    <textarea id="inputDescripcion" name="descripcion" rows="3" cols="35"></textarea><br><br>
+
+                    <button type="submit" id="btnGuardarEvento">Guardar</button>
+                </form>
+            </div>
+        </div>
+        <div class="aec-popup">
+            <div class="aec-day-date"></div>
+                <ul class="aec-event-list"></ul>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+</html>
