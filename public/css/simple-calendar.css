@@ -98,7 +98,8 @@
     height: 100%;
     padding: 70px;
     background: #545A5C;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    z-index: 1000}
     .calendar .event-container .event-wrapper {
       overflow-y: auto;
       max-height: 100%; }

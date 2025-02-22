@@ -17,7 +17,7 @@ class Cita
     #[ORM\Column(length: 255)]
     private ?string $nombre = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $fecha = null;
 
     #[ORM\Column(length: 255)]

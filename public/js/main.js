@@ -11,9 +11,10 @@ $(document).ready(function(){
     })
 
     $('#registration_form_especialidad').val($('#select-especialidad').val())
-    $('#select-especialidad').on('change',function(){
-        $('#registration_form_especialidad').val($(this).val())
-    })
+    $('#registration_form_especialidad').prop('readonly', true);
+    $('#select-especialidad').on('change', function() {
+        $('#registration_form_especialidad').val($(this).val());
+    });
 
     $.ajax({
         type:"GET",

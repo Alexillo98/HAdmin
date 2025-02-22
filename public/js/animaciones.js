@@ -14,4 +14,24 @@ $(document).ready(function () {
     $(window).on('resize', function () {
         positionForm();
     });
+
+    $(".open-modal").click(function() {
+        const modalTarget = $(this).data("modal");
+        $(modalTarget).fadeIn();
+    });
+
+    $(".close").click(function() {
+        $(this).closest(".modal-overlay").fadeOut();
+    });
+
+    $(".modal-overlay").click(function(e) {
+        if (e.target === this) {
+            $(this).fadeOut();
+        }
+    });
+
+    // Modal añadir evento
+    $('#btnCloseModal').on('click', function() {
+        $('#modalAddEvent').fadeOut();
+    });
 });

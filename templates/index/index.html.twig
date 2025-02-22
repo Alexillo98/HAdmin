@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión Hospitalaria</title>
-    <link rel="stylesheet" href="{{ asset("/css/styles.css") }}">
-    <link rel="stylesheet" href="{{ asset("/css/simple-calendar.css") }}">
-    <link rel="stylesheet" href="{{ asset("/css/calendario.css") }}">
-    <script src="{{ asset("https://code.jquery.com/jquery-3.6.4.min.js") }}"></script>
-    <script src="{{ asset("https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js") }}"></script>
-    <script src="{{ asset("/js/animaciones.js") }}"></script>
-    <script src="{{ asset("/js/calendario.js") }}"></script>
-    <script src="{{ asset("/js/jquery.simple-calendar.js") }}"></script>
+    <link rel="stylesheet" href="{{ asset('/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/simple-calendar.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/calendario.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="{{ asset('/js/animaciones.js') }}"></script>
+    <script src="{{ asset('/js/calendario.js') }}"></script>
+    <script src="{{ asset('/js/jquery.simple-calendar.js') }}"></script>
 {% endblock %}
+
 {% block body %}
 <div class="container">
     <div class="menu">
@@ -22,7 +23,7 @@
                 <li class="dropdown">
                     <a href="#usuarios" class="dropdown-toggle">Usuarios</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#crear-usuario">Crear Usuario</a></li>
+                        <li><a href="{{ path("app_register") }}">Crear Usuario</a></li>
                         <li><a href="#editar-usuario">Editar Usuario</a></li>
                         <li><a href="#eliminar-usuario">Eliminar Usuario</a></li>
                     </ul>
@@ -34,54 +35,70 @@
                         <li><a href="#ver-reporte">Ver Reportes</a></li>
                     </ul>
                 </li>
-                <li><a href="#configuracion">Configuración</a></li>
+                <li><a href="{{ path("app_citas") }}">Citas</a></li>
                 <li><a href="#salir">Salir</a></li>
             </ul>
         </div>
     </div>
-    <div class="info-container">
-        <div class="photo box">
-            <img src="/img/medico1.jpeg" alt="foto_usuario">
-        </div>
-        <div class="id box">
-            <p>EMAIL:</p>
-            <p>NOMBRE:</p>
-            <p>APELLIDO:</p>
-            <p>EDAD:</p>
-        </div>
-        <div class="personal-info box">
-            <p>ID: </p>
-            <p>ROL: </p>
-        </div>
-    </div>
-    <div class="additional-info box">
-        <div id="calendar">
-        </div>
-        <!-- Modal oculto inicialmente -->
-        <div id="modalAddEvent" class="myModal" style="display: none">
-            <div class="myModal-content">
-                <span class="closeModal" id="btnCloseModal">&times;</span>
-                <h3>Añadir nueva cita</h3>
-                <form id="formAddEvent">
-                    <label for="inputFecha">Fecha:</label>
-                    <input type="text" id="inputFecha" name="fecha" readonly><br><br>
+    <div class="main-content">
+        <!-- Botón para abrir modal de información de usuario -->
+        <button class="open-modal" data-modal="#userInfoModal">Ver Datos del Usuario</button>
 
-                    <label for="inputNombre">Nombre:</label>
-                    <input type="text" id="inputNombre" name="nombre" required><br><br>
+        <!-- Caja con el calendario y su modal, ahora forzada a la parte de abajo -->
+        <div class="additional-info box">
+            <div id="calendar"></div>
+            <!-- Modal oculto inicialmente -->
+            <div id="modalAddEvent" class="myModal" style="display: none;">
+                <div class="myModal-content">
+                    <span class="closeModal" id="btnCloseModal">&times;</span>
+                    <h3>Añadir nueva cita</h3>
+                    <form id="formAddEvent">
+                        <label for="inputFecha">Fecha:</label>
+                        <input type="text" id="inputFecha" name="fecha" readonly><br><br>
 
-                    <label for="inputDescripcion">Descripción:</label>
-                    <textarea id="inputDescripcion" name="descripcion" rows="3" cols="35"></textarea><br><br>
+                        <label for="hourSelect">Hora:</label>
+                        <select id="hourSelect" name="hour"></select>
 
-                    <button type="submit" id="btnGuardarEvento">Guardar</button>
-                </form>
+                        <label for="minuteSelect">Minutos:</label>
+                        <select id="minuteSelect" name="minute"></select>
+
+                        <label for="inputNombre">Nombre:</label>
+                        <input type="text" id="inputNombre" name="nombre" required><br><br>
+
+                        <label for="inputDescripcion">Descripción:</label>
+                        <textarea id="inputDescripcion" name="descripcion" rows="3" cols="35"></textarea><br><br>
+
+                        <button type="button" id="btnGuardarEvento">Guardar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="aec-popup">
+                <div class="aec-day-date"></div>
+                <ul class="aec-event-list"></ul>
             </div>
         </div>
-        <div class="aec-popup">
-            <div class="aec-day-date"></div>
-                <ul class="aec-event-list"></ul>
-        </div>
     </div>
 </div>
+
+<!-- Modal de datos del usuario -->
+<div id="userInfoModal" class="modal-overlay">
+    <div class="modal">
+        <span class="close">&times;</span>
+        <div class="info-container">
+            <div class="photo box">
+                <img src="/img/medico1.jpeg" alt="foto_usuario">
+            </div>
+            <div class="id box">
+                <p><strong>EMAIL:</strong> usuario@ejemplo.com</p>
+                <p><strong>NOMBRE:</strong> Nombre</p>
+                <p><strong>APELLIDO:</strong> Apellido</p>
+                <p><strong>EDAD:</strong> 30</p>
+            </div>
+            <div class="personal-info box">
+                <p><strong>ID:</strong> 12345</p>
+                <p><strong>ROL:</strong> Médico</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
 </div>
-{% endblock %}
-</html>

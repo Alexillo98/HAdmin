@@ -148,7 +148,10 @@
       var eventContainer = $('<div class="event-container"><div class="close"></div><div class="event-wrapper"></div></div>');
 
       calendar.append(body);
-      calendar.append(eventContainer);
+
+      if(calendar.find(".event-container").length <= 0){
+        calendar.append(eventContainer);
+      }
     },
     changeMonth: function (value) {
       this.currentDate.setMonth(this.currentDate.getMonth() + value, 1);
@@ -198,11 +201,14 @@
       events.forEach(function (event) {
         var startDate = new Date(event.startDate);
         var endDate = new Date(event.endDate);
+        console.log(event.startDate)
         var $event = $('' +
           '<div class="event">' +
           ' <div class="event-hour">' + startDate.getHours() + ':' + (startDate.getMinutes() < 10 ? '0' : '') + startDate.getMinutes() + '</div>' +
           ' <div class="event-date">' + plugin.formatDateEvent(startDate, endDate) + '</div>' +
           ' <div class="event-summary">' + event.summary + '</div>' +
+            '<div class="event-dbid" style="display: none">' + event.dbId + '</div>'+
+            '<div class="event-name">' + event.name + '</div>' +
           '</div>');
 
         $event.data( 'event', event );

@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d9f092c-b104-48c4-9d71-49d1c21f393d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/symfony-hospital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony-hospital.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/simple-calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/simple-calendar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/animaciones.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/animaciones.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/calendario.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/calendario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery.simple-calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery.simple-calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Cita.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cita.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +43,7 @@
   </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/victorponz/symfony-contactos.git&quot;,
+    &quot;url&quot;: &quot;git@github.com:Alexillo98/HAdmin.git&quot;,
     &quot;accountId&quot;: &quot;f5a95a7c-48ca-4d40-a859-cb8c0ef75dba&quot;
   }
 }</component>
@@ -181,21 +192,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/alumno/PhpstormProjects/symfony BLOG",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "php.override.implement.member.chooser.php.doc": "NONE",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/alumno/PhpstormProjects/symfony-hospital&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/alumno/Escritorio/PhpStorm-242.21829.154/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
@@ -235,7 +247,14 @@
       <workItem from="1737445314905" duration="5965000" />
       <workItem from="1737542108569" duration="7189000" />
       <workItem from="1737718874260" duration="2374000" />
-      <workItem from="1737892078396" duration="349000" />
+      <workItem from="1737892078396" duration="4018000" />
+      <workItem from="1737961814927" duration="8120000" />
+      <workItem from="1738048344738" duration="11427000" />
+      <workItem from="1738492554856" duration="1994000" />
+      <workItem from="1738494896524" duration="2336000" />
+      <workItem from="1738664677857" duration="4003000" />
+      <workItem from="1738828822456" duration="11111000" />
+      <workItem from="1739171425594" duration="3737000" />
     </task>
     <servers />
   </component>
